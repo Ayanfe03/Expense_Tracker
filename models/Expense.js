@@ -20,9 +20,9 @@ const Expense = sequelize.define('Expense', {
 }, {
   timestamps: true,
 });
-Expense.associate = (models) => {
-  Expense.belongsTo(Category);
-  Expense.belongsTo(User, { foreignKey: 'UserId', as: 'user' });
-}
+
+Expense.belongsTo(Category);
+Expense.belongsTo(User, { foreignKey: 'UserId', as: 'user' });
+
 
 module.exports = Expense;
